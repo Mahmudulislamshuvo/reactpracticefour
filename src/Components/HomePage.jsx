@@ -17,7 +17,7 @@ const HomePage = () => {
               placeholder="Search Food...."
               id="Search"
               name="Search"
-              className="bg-transparent border border-[#FF0909] px-[15px] py-[10px] w-[285px] rounded-md text-white"
+              className="bg-transparent border border-[#FF0909] px-[15px] py-[10px] w-[285px] rounded-md text-white focus:outline-none focus:border-[#FF0909]"
             />
           </div>
         </div>

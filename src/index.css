@@ -6,12 +6,13 @@
 
 html,
 body,
-* {
+*,
+#root {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   min-height: 100%;
-  font-family: "Inter", sans-serif; /* Set default font */
+  font-family: "Poppins", serif; /* Set default font */
 }
 
 *,
@@ -44,4 +45,10 @@ button {
 a {
   text-decoration: none;
   color: inherit;
+}
+.custom-bg {
+  background-image: url("./assets/Backround/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
