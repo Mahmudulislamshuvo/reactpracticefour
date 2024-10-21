@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import pic from "../assets/Cards/Ellipse.png";
 
 const Content = () => {
   const [FoodData, setFoodData] = useState([]);
@@ -10,6 +11,8 @@ const Content = () => {
         setFoodData(data);
       });
   }, []);
+
+  console.log(FoodData[0]);
 
   return (
     <>
@@ -35,8 +38,8 @@ const Content = () => {
               <div className="w-full">
                 <picture>
                   <img
-                    src={data.ItemPicture}
-                    alt={data.ItemPicture}
+                    src={`http://localhost:3000${data.ItemPicture}`}
+                    alt={"pic"}
                     className="h-[133px] w-[133px]"
                   />
                 </picture>

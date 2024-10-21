@@ -3,10 +3,13 @@ const cors = require("cors");
 const path = require("path");
 const { log } = require("node:console");
 const app = express();
+// const picture1 = require("../Backend/public/images/egg.png");
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
-app.use("/images", express.static(path.join(__dirname, "../public/images")));
+app.use("/images", express.static(path.join(__dirname, "/public/images")));
+
+console.log(path.join(__dirname));
 
 app.get("/", (req, res) => {
   const foodData = [
