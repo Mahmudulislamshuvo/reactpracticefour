@@ -18,4 +18,12 @@ const FoodItemSchema = new Schema({
     type: String,
     required: true,
   },
+  type: {
+    type: String,
+    required: true,
+  },
 });
+
+const Model = mongoose.model(`Model`, FoodItemSchema);
+
+module.exports = Model;
