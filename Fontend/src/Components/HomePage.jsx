@@ -2,6 +2,10 @@ import React from "react";
 import Logo from "../assets/Logo/Logo.svg";
 
 const HomePage = () => {
+  const searchbar = (e) => {
+    const filteringData = e.target.value;
+  };
+
   return (
     <>
       <div className="bg-[#323334] px-[120px] pt-[80px]">
@@ -13,6 +17,7 @@ const HomePage = () => {
           </div>
           <div>
             <input
+              onChange={searchbar}
               type="text"
               placeholder="Search Food...."
               id="Search"

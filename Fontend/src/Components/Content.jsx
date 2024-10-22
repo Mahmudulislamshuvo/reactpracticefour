@@ -1,18 +1,26 @@
 import React, { useEffect, useState } from "react";
-import pic from "../assets/Cards/Ellipse.png";
 
 const Content = () => {
   const [FoodData, setFoodData] = useState([]);
+  const [FilterData, setFilterData] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/")
-      .then((res) => res.json())
-      .then((data) => {
+    const FoodDatafromDB = async () => {
+      try {
+        const res = await fetch("http://localhost:3000/");
+        // .then((res) => res.json())
+        // .then((data) => {
+        //   setFoodData(data);
+        // });
+        const data = await res.json();
         setFoodData(data);
-      });
+        setFilterData(data);
+      } catch (error) {
+        console.log(error, "Unable to fatch data");
+      }
+    };
+    FoodDatafromDB();
   }, []);
-
-  console.log(FoodData[0]);
 
   return (
     <>
