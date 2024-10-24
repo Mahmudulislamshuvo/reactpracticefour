@@ -3,11 +3,13 @@ import HomePage from "./Components/HomePage";
 import Content from "./Components/Content";
 
 function App() {
+  const [filterdata, setfilterdata] = useState("");
+
   return (
     <>
       <div>
-        <HomePage />
-        <Content />
+        <HomePage filterdata={filterdata} />
+        <Content filterdata={filterdata} setfilterdata={setfilterdata} />
       </div>
     </>
   );

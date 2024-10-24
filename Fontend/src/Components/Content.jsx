@@ -1,20 +1,15 @@
 import React, { useEffect, useState } from "react";
 
-const Content = () => {
+const Content = ({ filterdata, setfilterdata }) => {
   const [FoodData, setFoodData] = useState([]);
-  const [FilterData, setFilterData] = useState(null);
 
   useEffect(() => {
     const FoodDatafromDB = async () => {
       try {
         const res = await fetch("http://localhost:3000/");
-        // .then((res) => res.json())
-        // .then((data) => {
-        //   setFoodData(data);
-        // });
         const data = await res.json();
         setFoodData(data);
-        setFilterData(data);
+        setfilterdata(data);
       } catch (error) {
         console.log(error, "Unable to fatch data");
       }

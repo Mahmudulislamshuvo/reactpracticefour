@@ -1,9 +1,13 @@
 import React from "react";
 import Logo from "../assets/Logo/Logo.svg";
 
-const HomePage = () => {
+const HomePage = ({ filterdata, setfilterdata }) => {
   const searchbar = (e) => {
     const filteringData = e.target.value;
+
+    if (filterdata == "") {
+      setfilterdata("");
+    }
   };
 
   return (
